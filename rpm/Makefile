@@ -20,7 +20,7 @@ spec=$(name).spec
 
 
 # determine the rpm version
-rpm_version=$(shell grep "Version:" $(spec) | sed -e "s/Version://g" -e "s/[ \t]*//g")
+rpm_version=$(shell grep "base_version" $(spec) | sed -e "s/base_version//g" -e "s/[ \t]*//g")
 
 .PHONY: clean rpm
 
