@@ -1,0 +1,15 @@
+FROM  italiangrid/build-centos7
+
+RUN yum -y install pkgconfig  \
+    zlib \
+    openssl-devel \
+    libattr-devel \
+    globus-gridftp-server-devel \
+    globus-ftp-control-devel \
+    globus-ftp-client-devel
+
+USER build
+ADD Makefile ./storm-globus-gridftp-server.spec.in /home/build/
+WORKDIR /home/build
+
+CMD /bin/bash -c make
