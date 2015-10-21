@@ -36,7 +36,7 @@ Packager:       Elisabetta Ronchieri <elisabetta.ronchieri@cnaf.infn.it>
 License:        Apache License, Version 2.0
 URL: 		https://github.com/italiangrid/storm-gridftp-dsi.git           
 
-Source: 	%{name}-%{version}.tar.gz
+Source: 	%{name}.tar.gz
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Group:          Applications/Libraries
