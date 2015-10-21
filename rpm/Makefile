@@ -18,10 +18,6 @@ rpmbuild_dir=$(shell pwd)/rpmbuild
 spec_src=$(name).spec.in
 spec=$(name).spec
 
-
-# determine the rpm version
-rpm_version=$(shell grep "base_version" $(spec) | sed -e "s/base_version//g" -e "s/[ \t]*//g")
-
 .PHONY: clean rpm
 
 all: rpm
@@ -48,7 +44,7 @@ rpm: prepare-spec
 		$(rpmbuild_dir)/SOURCES \
 		$(rpmbuild_dir)/SPECS \
 		$(rpmbuild_dir)/SRPMS
-	cp $(source_dir)/$(name).tar.gz $(rpmbuild_dir)/SOURCES/$(name)-$(rpm_version).tar.gz
+	cp $(source_dir)/$(name).tar.gz $(rpmbuild_dir)/SOURCES/$(name).tar.gz
 ifndef BUILD_NUMBER
 	rpmbuild --nodeps -v -ba $(spec) --define "_topdir $(rpmbuild_dir)"
 else
