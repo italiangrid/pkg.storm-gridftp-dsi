@@ -1,8 +1,7 @@
 name=storm-globus-gridftp-server
 
-#tag=GDSI_1.2
 # The tag to build
-tag=develop
+tag=GDSI_1.2
 
 ifdef BUILD_TAG
 tag=$(BUILD_TAG)
